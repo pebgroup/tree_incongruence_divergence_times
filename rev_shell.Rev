@@ -1,0 +1,9 @@
+n_reps <- 8
+for (a in 1:n_reps){
+data <- readDiscreteCharacterData(a + "concat_sequence/" + "concat.nexus")
+topology <- readTrees(a + "species_tree/" + "species_tree.tre")[1]
+source("simple_clock_script.Rev")
+}
+
+
+
