@@ -1,0 +1,51 @@
+n_taxa <- data.ntaxa()
+taxa <- data.taxa()
+n_branches <- n_taxa*2 - 2
+
+mvi = 0
+mni = 0
+
+###################
+
+Q := fnJC(4)
+
+###################
+
+root_time <- 1
+
+rho <- 1
+
+lambda ~ dnExponential(10)
+moves[++mvi] = mvScale(lambda,lambda=1,weight=3, tune=true)
+
+timetree ~ dnBDP(lambda, mu=0, rho=rho, rootAge=root_time, samplingStrategy="uniform", condition="nTaxa", taxa=taxa)
+timetree.setValue(topology_fix)
+
+###################
+
+for(i in 1:n_branches){
+branch_rates[i] ~ dnLnorm(ln(0.05) - ((0.2937^2)/2), 0.2937)
+moves[++mvi] = mvScale(branch_rates[i], lambda = 1, weight=2.0, tune=true)
+}
+
+moves[++mvi] = mvVectorScale(branch_rates,lambda=1.0,weight=2.0, tune=true) 
+moves[++mvi] = mvVectorSingleElementScale(branch_rates,lambda=30.0,weight=1.0, tune=true)
+
+###################
+
+seq ~ dnPhyloCTMC(timetree, Q=Q, branchRates=branch_rates, type="DNA")
+seq.clamp(data)
+
+###################
+
+mymodel = model(timetree)
+
+monitors[++mni] = mnModel(filename = type[x] + "output/" + probs[a] + "relaxed_fixed_higher_sd_congruent.log", printgen=100, separator = TAB)
+monitors[++mni] = mnFile(filename = type[x] + "output/" + probs[a] + "relaxed_fixed_output_higher_sd_congruent.trees", printgen=100, timetree)
+monitors[++mni] = mnScreen(printgen = 100)
+
+mymcmc = mcmc(mymodel, monitors, moves, nruns=1)
+mymcmc.burnin(generations = 100000, tuningInterval = 250)
+mymcmc.run(generations=600000)
+
+clear(timetree, rho, root_time, lambda, moves, monitors, branch_rates)

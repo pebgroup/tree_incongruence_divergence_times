@@ -1,0 +1,15 @@
+probs <- v(0, 0.1, 0.2, 0.3, 0.4, 0.5)
+for (a in 1:6){
+for (x in 1:1){
+type <- v("data_incongruence_")
+data <- readDiscreteCharacterData(type[x] + probs[a] + "/" + "congruent.nexus")
+topology_fix <- readTrees("data_incongruence_" + probs[a] + "/" + "species_tree.tre")[1]
+source("simple_clock_script.Rev")
+source("relaxed_script_fixed.Rev")
+topology_fix <- readTrees("four_taxon_tree_top.tre")[1]
+source("simple_branch_length_estimation.Rev")
+}
+}
+
+
+
