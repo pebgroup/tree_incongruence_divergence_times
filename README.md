@@ -1,7 +1,7 @@
 # The implications of topological incongruence between gene trees and the species tree for divergence time estimation
 
 The scripts presented here are relevent to the article: The implications of incongruence between gene trees and the species tree for divergence time estimation 
-The branch specific approach discussed in the article will be available to download as an r package shortly.
+The branch specific approach discussed in the article will be available to download as an r package shortly. Recently developed simulation methods will also be available as an r script shortly.
 
 ## Simple four taxon simulations
 
@@ -45,6 +45,12 @@ Run "multispecies_coalescent/rev_shell.Rev"
 
 ### To estimate individual gene trees as a basis for the branch specific method
 Run "rev_shell_by_gene.Rev" in RevBayes
+
+
+## Empirical example
+
+
+
 
 
 
