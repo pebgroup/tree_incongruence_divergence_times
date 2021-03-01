@@ -49,6 +49,17 @@ Run "rev_shell_by_gene.Rev" in RevBayes
 
 ## Empirical example
 
+Tree inference.
+
+### To perform gene shopping
+Run "empirical_example/gene_shopping.R" to identify loci with gene trees that are topologically congruent with the species tree. Ensure that script is searching correct directory for the gene trees.
+
+### To estimate species tree branch lengths with congruent branches method
+Run "empirical_example/branch_wise_analysis.R". Ensure that script is searching correct directory for gene trees. 
+
+### To perform treePL analysis
+Run relevant ".cppr8s" file. 
+
 
 
 
