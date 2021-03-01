@@ -7,10 +7,11 @@ The branch specific approach discussed in the article will be available to downl
 
 ### To simulate the data
 Run "four_taxon/four_taxon_simulation.R" to perform the four taxon simulations discussed in the article.
-Arguments: 
-      - n_gene_trees refers to the number of gene trees to simulate for a given species tree
-      - locus size refers to the length in bp of each locus
-      - probs refers to the probavbility that gene trees are topologically incongruent with the species tree
+
+#### Arguments: 
+n_gene_trees refers to the number of gene trees to simulate for a given species tree
+locus size refers to the length in bp of each locus
+probs refers to the probavbility that gene trees are topologically incongruent with the species tree
 
 ### To analyse the data as a concatenated alignment
 Run "four_taxon/rev_shell.Rev" in RevBayes. 
