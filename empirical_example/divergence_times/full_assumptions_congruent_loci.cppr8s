@@ -1,0 +1,154 @@
+treefile = for_analysis_cong.tre
+
+###
+
+mrca = all Ginkgo_biloba_1kp Sarcandra_glabra_1kp
+max = all 350
+min = all 350
+
+###
+
+mrca = some_core_lamiaceae Teucrium_chamaedrys_1kp Ruellia_brittoniana_1kp
+min = some_core_lamiaceae 38.4
+
+###
+
+mrca = solanoideae_stem Nicotiana_heterantha_Ang353 Solanum_sisymbriifolium_1kp
+min = solanoideae_stem 52.22
+
+###
+
+mrca = gentianales_crown Galium_boreale_1kp Pteleocarpa_malaccensis_Ang353 
+min = gentianales_crown 41.2
+
+###
+
+mrca = three_on_original Vahlia_capensis_Ang353 Teucrium_chamaedrys_1kp
+min = three_on_original 79.7667
+
+###
+
+mrca = stem_paracryphiales Forgesia_racemosa_Ang353 Quintinia_oreophila_Ang353
+min = stem_paracryphiales 79.7667 
+
+###
+
+mrca = stem_asteraceae Echinops_sphaerocephalus_Ang353 Acicarpha_tribuloides_PAFTOL
+min = stem_asteraceae 72.1
+
+###
+
+mrca = seven_on_diagram Cyrilla_racemiflora_Ang353 Solanum_sisymbriifolium_1kp
+min = seven_on_diagram 86.3
+
+###
+
+mrca = eight_on_diagram Nothofagus_obliqua_1kp Comptonia_peregrina_Ang353
+min = eight_on_diagram 93.9 
+
+###
+
+mrca = stem_rhamnaceae Elaeagnus_pungens_1kp Rhamnus_caroliniana_1kp
+min = stem_rhamnaceae 72.1
+
+###
+
+mrca = stem_fabaceae Polygala_lutea_1kp Gilbertiodendron_ecoukense_Ang353
+min = stem_fabaceae 56
+
+###
+
+mrca = stem_malpighiales Ruptiliocarpon_caracolito_Ang353 Euphorbia_pekinensis_1kp
+min = stem_malpighiales 86.3
+
+###
+
+mrca = stem_brassicales Upuna_borneensis_Ang353 Arabis_alpina_1kp
+min = stem_brassicales 86.3
+
+###
+
+mrca = eleven_on_original Litchi_chinensis_1kp Upuna_borneensis_Ang353
+min = eleven_on_original 89.8 
+
+###
+
+mrca = stem_staphyleaceae Staphylea_trifolia_1kp Crossosoma_californicum_Ang353
+min = stem_staphyleaceae 56
+
+###
+
+mrca = stem_combretaceae Terminalia_neotaliala_1kp Syzygium_paniculatum_1kp
+min = stem_combretaceae 86.3
+
+###
+
+mrca = sax_lineage Saxifraga_fortunei_Ang353 Myriophyllum_aquaticum_1kp
+min = sax_lineage 89.3
+
+###
+
+mrca = twelve_on_original_tree Nepenthes_mirabilis_Ang353 Polygala_lutea_1kp
+min = twelve_on_original_tree 100.5 
+
+###
+
+mrca = thirteen_on_original_tree Buxus_sempervirens_1kp Trochodendron_aralioides_1kp
+min = thirteen_on_original_tree 110.8
+
+###
+
+mrca = fourteen_on_original_tree Ceratophyllum_demersum_Ang353 Polygala_lutea_1kp
+min = fourteen_on_original_tree 127.2
+
+###
+
+mrca = fifteen_on_original_tree Strelitzia_reginae_1kp Anigozanthos_bicolor_Ang353
+min = fifteen_on_original_tree 72.1
+
+###
+
+mrca = crown_poaceae Panicum_miliaceum_1kp Deschampsia_cespitosa_1kp
+min = crown_poaceae 66
+
+###
+
+mrca = sixteen_on_original_tree Typha_angustifolia_1kp Strelitzia_reginae_1kp
+min = sixteen_on_original_tree 83.6 
+
+###
+
+mrca = seventeen_on_original_tree Butomus_umbellatus_Ang353 Strelitzia_reginae_1kp
+min = seventeen_on_original_tree 123
+
+###
+
+mrca = stem_aristolochiaceae Aristolochia_elegans_1kp Piper_auritum_1kp
+min = stem_aristolochiaceae 72.1
+
+###
+
+mrca = nineteen_on_original_tree Lindera_benzoin_1kp Magnolia_acuminata_Ang353
+min = nineteen_on_original_tree 113
+
+###
+
+mrca = angiosperm_crown Amborella_trichopoda_Ang353 Polygala_lutea_1kp
+min = angiosperm_crown 132.5
+max = angiosperm_crown 145.75
+
+numsites = 19105
+
+cv
+cviter=100
+pliter=100
+cvstart=10000
+cvstop=0.01
+cvsimaniter=10000
+plsimaniter=10000
+thorough
+opt = 2
+moredetail
+optad = 2
+moredetailad
+optcvad = 2

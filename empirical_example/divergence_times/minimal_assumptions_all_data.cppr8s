@@ -1,0 +1,26 @@
+treefile = for_analysis_all.tre
+
+###
+
+mrca = all Ginkgo_biloba_1kp Sarcandra_glabra_1kp
+max = all 350
+min = all 350
+
+###
+
+numsites = 234364
+
+cv
+cviter=100
+pliter=100
+cvstart=10000
+cvstop=10000
+cvsimaniter=10000
+plsimaniter=10000
+thorough
+opt = 2
+optad = 2
+moredetailad
+optcvad = 2
+moredetailcvad
+
