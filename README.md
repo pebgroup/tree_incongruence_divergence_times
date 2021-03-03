@@ -48,7 +48,7 @@ Run "rev_shell_by_gene.Rev" in RevBayes
 
 ## Empirical example
 
-Tree inference.
+Tree inference are linked [here](https://github.com/pebgroup/Seed_Plant_BackBone).  
 
 ### To perform gene shopping
 Run "empirical_example/gene_shopping.R" to identify loci with gene trees that are topologically congruent with the species tree. Ensure that script is searching correct directory for the gene trees.
