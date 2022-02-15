@@ -8,14 +8,9 @@ library(TreePar)
 
 n_gene_trees <- 400 
 locus_size <- 800 
-n_reps <- 100 
+n_reps <- 50 
 effective_population_size_approx <- 120 
 n_tips <- 16
-
-##########SPECIES_TREE_PARAMS
-
-lambda <- 3
-mu <- 0
 
 ###########
 
@@ -28,7 +23,7 @@ node_numbers <- seq(length(tip_vector)+1, (length(tip_vector)+2) + (length(tip_v
 
 ##########SIMULATE_SPECIES_TREE
 
-for (z in 1:50){
+for (z in 1:n_reps){
 
 entire_tree <- read.tree("entire_tree_balanced.tre")
 
