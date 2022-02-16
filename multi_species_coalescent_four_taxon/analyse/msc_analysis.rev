@@ -1,0 +1,112 @@
+mvi=0
+mni=0
+
+###################################
+###READ_IN_KEP_INPUT_INFORMATION###
+###################################
+
+n_species <- species_tree.ntips()
+taxa <- species_tree.taxa()
+n_branches <- 2 * n_species - 1 
+
+taxon_map = readTaxonData("taxon_map.Rev")
+
+#######
+#######
+###n###
+#######
+#######
+
+###SEQUENCE_EVOLUTION_MODEL###
+##############################
+
+for (i in 1:num_loci){
+Q[i] := fnJC(4)
+}
+
+#######
+#######
+###t###
+#######
+#######
+
+###SPECIES_TREE_MODEL###
+########################
+
+rho <- 1
+
+root_time <- species_tree.rootAge()
+
+lambda ~ dnExponential(10)
+moves[++mvi] = mvScale(lambda,lambda=1,weight=3, tune=true)
+
+psi ~ dnBDP(lambda, mu=0, rootAge=root_time, rho=rho,taxa=taxa )
+psi.setValue(species_tree)
+
+###GENE_TREE_MODEL###
+#####################
+
+Ne <- 0.12
+
+for (i in 1:num_loci){
+geneTree[i] ~ dnMultiSpeciesCoalescent(speciesTree=psi, Ne=Ne, taxa=taxon_map)
+geneTree[i].setValue(gene_trees[i])
+}
+
+###TREE_MOVES###
+################
+
+moves[++mvi] = mvNodeTimeSlideUniform(psi, weight=4.0)
+moves[++mvi] = mvTreeScale(psi, weight=2.0)
+
+for (i in 1:num_loci){
+}
+
+#######
+#######
+###r###
+#######
+#######
+
+for (i in 1:num_loci){
+clock_rate[i] <- 0.05
+}
+
+###################
+###OVERALL_MODEL###
+###################
+
+for (i in 1:num_loci){
+seq[i] ~ dnPhyloCTMC(tree=geneTree[i], Q=Q[i], branchRates=clock_rate[i], type="DNA")
+seq[i].clamp(data[i])
+}
+
+##############
+###MONITORS###
+##############
+
+tmrca_tips_one := tmrca(psi, clade("A", "B"))
+tmrca_tips_two := tmrca(psi, clade("C", "D"))
+
+one_tmrca_gene_tips_one := tmrca(geneTree[1], clade("A", "B"))
+one_tmrca_gene_tips_two := tmrca(geneTree[1], clade("C", "D"))
+one_tmrca_gene_tips_three := tmrca(geneTree[1], clade("A", "B", "C", "D"))
+
+two_tmrca_gene_tips_one := tmrca(geneTree[2], clade("A", "B"))
+two_tmrca_gene_tips_two := tmrca(geneTree[2], clade("C", "D"))
+two_tmrca_gene_tips_three := tmrca(geneTree[2], clade("A", "B", "C", "D"))
+
+mymodel = model(psi)
+
+monitors[1] = mnScreen(printgen=10, tmrca_tips_one, tmrca_tips_two)
+monitors[2] = mnModel(filename = "analysis_of_" + datatype + "/msc_analysis_output/model.log",printgen=100, separator = TAB)
+monitors[3] = mnFile(filename = "analysis_of_" + datatype + "/msc_analysis_output/species_trees.trees",printgen=100, separator = TAB, psi)
+for ( i in 1:num_loci ) {
+monitors[i+3] = mnFile(filename = "analysis_of_" + datatype + "/msc_analysis_output/" + i + "_sampled_gene_trees.trees",printgen=100, separator = TAB, geneTree[i])
+}
+mymcmc = mcmc(mymodel, monitors, moves, nruns=1)
+#mymcmc.burnin(generations = 25000, tuningInterval = 250)
+#mymcmc.run(generations=30000000)
+mymcmc.run(generations=300)
+
+clear(data)

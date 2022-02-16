@@ -1,0 +1,27 @@
+type <- v("balanced_sixteen_cong", "balanced_sixteen_one_incong", "balanced_sixteen_two_incong", "balanced_sixteen_three_incong", "balanced_sixteen_four_incong", "unbalanced_sixteen_cong", "inbalanced_sixteen_incong")
+species_tree <- v("balanced_sixteen_cong.tre", "balanced_sixteen_cong.tre", "balanced_sixteen_cong.tre", "balanced_sixteen_cong.tre", "balanced_sixteen_cong.tre", "unbalanced_sixteen_cong.tre", "unbalanced_sixteen_cong.tre")
+species_top_tree <- v("balanced_sixteen_cong_top.tre", "balanced_sixteen_cong_top.tre", "balanced_sixteen_cong_top.tre", "balanced_sixteen_cong_top.tre", "balanced_sixteen_cong_top.tre", "unbalanced_sixteen_cong_top.tre", "unbalanced_sixteen_cong_top.tre")
+
+root_times <- v(0.8, 0.8, 0.8, 0.8, 0.8, 3.0, 3.0)
+
+######
+
+for (a in 1:6){
+
+data <- readDiscreteCharacterData("../data_incongruence/" + type[a] + "/" + "concat.nexus")
+
+topology_fix <- readTrees("../" + species_tree[a])[1]
+source("simple_clock_script.Rev")
+
+topology_fix <- readTrees("../" + species_tree[a])[1]
+source("simple_relaxed_script.Rev")
+
+topology_fix <- readTrees("../" + species_tree[a])[1]
+source("simple_less_relaxed_script.Rev")
+
+topology_fix <- readTrees("../" + species_top_tree[a])[1]
+source("simple_branch_length_estimation.Rev")
+
+}
+
+

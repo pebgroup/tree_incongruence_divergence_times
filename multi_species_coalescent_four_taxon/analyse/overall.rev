@@ -1,0 +1,56 @@
+##########################
+###analysis of msc data###
+##########################
+
+datatype <- "msc"
+num_loci <- 200
+
+###concatenated###
+
+dataset <- v("concat", "congruent")
+for (j in 1:2){
+topology_fix = readTrees("../entire_tree_balanced.tre")[1]
+data <- readDiscreteCharacterData("../data/concat_sequence/" + dataset[j] + ".nexus")
+source("simple_clock_script.rev")
+}
+
+###individual gene trees###
+
+for (i in 1:num_loci){
+data <- readDiscreteCharacterData("../data/gene_sequences/" + i + ".nexus")
+topology_fix = readTrees("../data/gene_trees/" + i + ".nexus")[1]
+source("simple_clock_script_gene_trees.Rev")
+}
+
+###msc analysis###
+
+for (i in 1:num_loci){
+data[i] <- readDiscreteCharacterData("../data/gene_sequences/" + i + ".nexus")
+gene_trees[i] = readTrees("../data/gene_trees/" + i + ".nexus")[1]
+}
+species_tree = readTrees("../entire_tree_balanced.tre")[1]
+source("msc_analysis.Rev")
+
+########################################
+###ANALYSIS_OF_SIMPLE_FOUR_TAXON_DATA###
+########################################
+
+num_loci <- 400
+
+###in msc framework###
+
+datatype <- "simple"
+for (i in 1:num_loci){ 
+data[i] <- readDiscreteCharacterData("../../simple_four_taxon/data_incongruence_0.5/" + i + ".nexus")
+gene_trees[i] = readTrees("../data/data_incongruence_0.5/extended_start_" + i + ".tre")[1]
+}
+species_tree = readTrees("../entire_tree_balanced_for_simple.tre")[1]
+source("msc_analysis.Rev")
+
+
+
+
+
+
+
+

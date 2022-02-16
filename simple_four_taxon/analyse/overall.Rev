@@ -1,0 +1,36 @@
+###INITIAL_ANALYESE_OF_WHOLE_DATASET###
+
+probs <- v(0, 0.1, 0.2, 0.3, 0.4, 0.5)
+concat_type <- v("concat", "congruent")
+b=1
+for (a in 1:6){
+data <- readDiscreteCharacterData("../data_incongruence_" + probs[a] + "/concat.nexus")
+topology_fix <- readTrees("../data_incongruence_" + probs[a] + "/" + "species_tree.tre")[1]
+source("simple_clock_script.Rev")
+source("more_relaxed_script_fixed.Rev")
+source("less_relaxed_script_fixed.Rev")
+topology_fix <- readTrees("../four_taxon_tree_top.tre")[1]
+source("simple_branch_length_estimation.Rev")
+}
+
+
+###CONGRUENT_SUBSET_FROM_INCONGRUENT_DATASET###
+
+b=2
+data <- readDiscreteCharacterData("../data_incongruence_0.5/congruent.nexus")
+topology_fix <- readTrees("../data_incongruence_0.5/species_tree.tre")[1]
+source("simple_clock_script.Rev")
+source("more_relaxed_script_fixed.Rev")
+source("less_relaxed_script_fixed.Rev")
+topology_fix <- readTrees("../four_taxon_tree_top.tre")[1]
+source("simple_branch_length_estimation.Rev")
+
+
+###ANALYSIS_OF_INDIVIDUAL_GENE_TREES_FROM_INCONGRUENT_DATASET###
+
+num_loci = 400
+for (i in 1:num_loci){
+data <- readDiscreteCharacterData("../data_incongruence_0.5/" + i + ".nexus")
+topology_fix = readTrees("../data_incongruence_0.5/" + i + ".tre")[1]
+source("simple_clock_script_gene_trees.Rev")
+}

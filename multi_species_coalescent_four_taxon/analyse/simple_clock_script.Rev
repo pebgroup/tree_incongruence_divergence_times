@@ -1,0 +1,54 @@
+n_taxa <- data.ntaxa()
+taxa <- data.taxa()
+n_branches <- n_taxa*2 - 2
+
+mvi = 0
+mni = 0
+
+###################
+
+Q := fnJC(4)
+
+###################
+
+root_time <- 0.4
+
+rho <- 1
+
+lambda ~ dnExponential(10)
+moves[++mvi] = mvScale(lambda,lambda=1,weight=3, tune=true)
+
+timetree ~ dnBDP(lambda, mu=0, rho=rho, rootAge=root_time, samplingStrategy="uniform", condition="nTaxa", taxa=taxa)
+timetree.setValue(topology_fix)
+
+moves[++mvi] = mvNodeTimeSlideUniform(timetree, weight=30.0)
+moves[++mvi] = mvTreeScale(timetree, delta = 1, weight=3.0, tune=true)
+
+tmrca_tips_one := tmrca(timetree, clade("A", "B"))
+tmrca_tips_two := tmrca(timetree, clade("C", "D"))
+
+###################
+
+clock_mean ~ dnUnif(10e-6, 10)
+moves[++mvi] = mvScale(clock_mean, lambda = 1, weight = 3)
+moves[++mvi] = mvScale(clock_mean, lambda = 0.1, weight = 3)
+moves[++mvi] = mvScale(clock_mean, lambda = 0.01, weight = 3)
+
+###################
+
+seq ~ dnPhyloCTMC(timetree, Q=Q, branchRates=clock_mean, type="DNA")
+seq.clamp(data)
+
+###################
+
+mymodel = model(timetree)
+
+monitors[++mni] = mnModel(filename = "analysis_of_" + datatype + "/output_concat/all_" + dataset[j] + ".log", printgen=50, separator = TAB)
+monitors[++mni] = mnFile(filename = "analysis_of_" + datatype + "/output_concat/all_" + dataset[j] + ".trees", printgen=50, timetree)
+monitors[++mni] = mnScreen(printgen = 50)
+
+mymcmc = mcmc(mymodel, monitors, moves, nruns=1)
+mymcmc.burnin(generations = 25000, tuningInterval = 250)
+mymcmc.run(generations=100000)
+
+clear(timetree, rho, root_time, lambda, moves, monitors)

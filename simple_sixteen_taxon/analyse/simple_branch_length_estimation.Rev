@@ -1,0 +1,40 @@
+n_taxa <- data.ntaxa()
+taxa <- data.taxa()
+n_branches <- n_taxa*2 - 3
+
+mvi = 0
+mni = 0
+
+###################
+
+Q := fnJC(4)
+
+###################
+
+topology <- topology_fix
+
+for (i in 1:n_branches){
+br_lens[i] ~ dnExponential(10.0)
+moves[++mvi] = mvScale(br_lens[i], tune=true)
+}
+
+psi := treeAssembly(topology, br_lens)
+
+###################
+
+seq ~ dnPhyloCTMC(tree=psi, Q=Q, type="DNA")
+seq.clamp(data)
+
+###################
+
+mymodel = model(psi)
+
+monitors[++mni] = mnModel(filename = "output_bl/" + type[a] + "_model.log", printgen=50, separator = TAB)
+monitors[++mni] = mnFile(filename = "output_bl/" + type[a] + "_trees.trees", printgen=50, psi)
+monitors[++mni] = mnScreen(printgen = 50)
+
+mymcmc = mcmc(mymodel, monitors, moves, nruns=1)
+mymcmc.burnin(generations = 25000, tuningInterval = 250)
+mymcmc.run(generations=100000)
+
+clear(psi, moves, monitors, topology, br_lens)

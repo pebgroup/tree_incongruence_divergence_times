@@ -1,0 +1,13 @@
+n_reps <- 50
+n_loci <- 400
+
+species_tree <- readTrees("../entire_tree_balanced.tre")[1]
+for (a in 1:n_reps){
+for (p in 1:loci){
+data <- readDiscreteCharacterData("../balanced/" + a + "_gene_sequences/" + p + ".nexus")
+topology <- readTrees("../balanced/" + a + "_gene_trees/" + p + ".nexus")[1]
+source("simple_clock_script_by_gene.Rev")
+}
+}
+
+

@@ -1,0 +1,31 @@
+dataset <- v("concat", "congruent") #add more if incorporating incongruent threshold
+n_loci <- 400
+n_reps <- 50
+
+###ANALYSIS_OF_OVERALL_AND_CONGRUENT###
+
+for (a in 1:n_reps){
+for (b in 1:2){
+data <- readDiscreteCharacterData("../unbalanced/" + a + "_concat_sequence/" + dataset[b] + ".nexus")
+topology <- readTrees("../entire_tree_unbalanced.tre")[1]
+source("simple_clock_script_unbalanced.Rev")
+
+data <- readDiscreteCharacterData("../balanced/" + a + "_concat_sequence/" + dataset[b] + ".nexus")
+topology <- readTrees("../entire_tree_balanced.tre")[1]
+source("simple_clock_script_balanced.Rev")
+}
+}
+
+###INFERENCE_OF_GENE_TREES###
+
+for (a in 1:n_reps){
+for (b in 1:n_loci){
+data <- readDiscreteCharacterData("../data/balanced/" + a + "_gene_sequences/" + i + ".nexus")
+topology_fix = readTrees("../data/gene_trees/" + a + "_gene_trees/" + i + ".tre")[1]
+source("simple_clock_script_by_gene.Rev")
+}
+}
+
+
+
+
