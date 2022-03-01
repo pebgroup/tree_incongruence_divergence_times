@@ -9,6 +9,11 @@ The scripts presented here are relevent to the article: Carruthers et al. The im
 **locus_size:** length in base pairs of each simulated locus.\
 **probs:** the probability that gene tree topologies are incongruent with the species tree topology in each simulated dataset.\
 
+#### To analyse simulated data [run overall.Rev](https://github.com/pebgroup/tree_incongruence_divergence_times/blob/master/simple_four_taxon/analyse/overall.Rev) in RevBayes. 
+This script will perform analyses of:\.
+1) The entire dataset\.
+2) Concatenated loci with gene trees that are topologically congruent with the species tree\.
+3) Individual loci, such that parameters can be estimated from congruent branches in gene trees\.
 
 ## Simple sixteen taxon
 Use for generating simple sixteen taxon simulated data, and analysing simulated data. 
