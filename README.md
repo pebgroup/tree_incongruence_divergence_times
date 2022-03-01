@@ -12,8 +12,8 @@ The scripts presented here are relevent to the article: Carruthers et al. The im
 #### To analyse simulated data [run overall.Rev](https://github.com/pebgroup/tree_incongruence_divergence_times/blob/master/simple_four_taxon/analyse/overall.Rev) in RevBayes. 
 This script will perform analyses of:
 1) **The entire dataset** - using [simple_clock_script.Rev](https://github.com/pebgroup/tree_incongruence_divergence_times/blob/master/simple_four_taxon/analyse/simple_clock_script.Rev) to estimate _t_, [more_relaxed_script.Rev](https://github.com/pebgroup/tree_incongruence_divergence_times/blob/master/simple_four_taxon/analyse/more_relaxed_script_fixed.Rev) and [less_relaxed_script.Rev](https://github.com/pebgroup/tree_incongruence_divergence_times/blob/master/simple_four_taxon/analyse/less_relaxed_script_fixed.Rev) to estimate _r_, and [simple_branch_length_estimation.Rev](https://github.com/pebgroup/tree_incongruence_divergence_times/blob/master/simple_four_taxon/analyse/simple_branch_length_estimation.Rev) to estimate _n_.
-3) Concatenated loci with gene trees that are topologically congruent with the species tree
-4) Individual loci, such that parameters can be estimated from congruent branches in gene trees
+2) **Concatenated loci with gene trees that are topologically congruent with the species tree** - using same scripts as for 1
+3) **Individual loci, such that parameters can be estimated from congruent branches in gene trees** - using [simple_clock_scripts_gene_trees.Rev](https://github.com/pebgroup/tree_incongruence_divergence_times/blob/master/simple_four_taxon/analyse/simple_clock_script_gene_trees.Rev)
 
 ## Simple sixteen taxon
 Use for generating simple sixteen taxon simulated data, and analysing simulated data. 
