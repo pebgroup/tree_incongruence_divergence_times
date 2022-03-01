@@ -4,7 +4,7 @@ The scripts presented here are relevent to the article: Carruthers et al. The im
 --- detailed instructions coming shortly ---
 
 ## Simple four taxon
-#### To generate simulated data [run four_taxon_simulation.R](https://github.com/pebgroup/tree_incongruence_divergence_times/blob/master/simple_four_taxon/simple_four_taxon_simulation.R).
+#### To generate simulated data run [simlpe_four_taxon_simulation.R](https://github.com/pebgroup/tree_incongruence_divergence_times/blob/master/simple_four_taxon/simple_four_taxon_simulation.R).
 **n_gene_trees:** number of gene trees to simulate.\
 **locus_size:** length in base pairs of each simulated locus.\
 **probs:** the probability that gene tree topologies are incongruent with the species tree topology in each simulated dataset.\
@@ -16,7 +16,13 @@ This script will perform analyses of:
 3) **Individual loci, such that parameters can be estimated from congruent branches in gene trees** - using [simple_clock_scripts_gene_trees.Rev](https://github.com/pebgroup/tree_incongruence_divergence_times/blob/master/simple_four_taxon/analyse/simple_clock_script_gene_trees.Rev)
 
 ## Simple sixteen taxon
-Use for generating simple sixteen taxon simulated data, and analysing simulated data. 
+#### To generate simulated data run [simple_sixteen_taxon_simulation.R](https://github.com/pebgroup/tree_incongruence_divergence_times/blob/master/simple_sixteen_taxon/simple_sixteen_taxon_simulation.R)
+Simulation needs to be repeated for imbalanced and imbalanced tree, and different levels of topological incongruence.
+**congruence_level:** output_file (needs to refer to whether tree is balanced, and level of incongruence)
+**tree:** species tree topology. Either [balanced_sixteen_taxon_cong.tre](https://github.com/pebgroup/tree_incongruence_divergence_times/blob/master/simple_sixteen_taxon/balanced_sixteen_cong.tre) or [unbalanced_sixteen_taxon_cong.tre] (https://github.com/pebgroup/tree_incongruence_divergence_times/blob/master/simple_sixteen_taxon/unbalanced_sixteen_cong.tre)
+**incong_tree:** incongurent gene tree topology. Either [balanced_sixteen_one_incong.tre](https://github.com/pebgroup/tree_incongruence_divergence_times/blob/master/simple_sixteen_taxon/balanced_sixteen_one_incong.tre), [balanced_sixteen_two_incong.tre](https://github.com/pebgroup/tree_incongruence_divergence_times/blob/master/simple_sixteen_taxon/balanced_sixteen_two_incong.tre), [balanced_sixteen_three_incong.tre](https://github.com/pebgroup/tree_incongruence_divergence_times/blob/master/simple_sixteen_taxon/balanced_sixteen_three_incong.tre), [balanced_sixteen_four_incong.tre](https://github.com/pebgroup/tree_incongruence_divergence_times/blob/master/simple_sixteen_taxon/balanced_sixteen_four_incong.tre), [unbalanced_sixteen_incong.tre](https://github.com/pebgroup/tree_incongruence_divergence_times/blob/master/simple_sixteen_taxon/unbalanced_sixteen_incong.tre)
+**n_gene_trees:** number of gene trees to simulate
+**locus_size:** number of base pairs per locus
 
 ## Multi-species coalescent sixteen taxon
 Use for generating data in a multispecies coalescent framework with 16 taxon species tree, and analysing simulated data.
