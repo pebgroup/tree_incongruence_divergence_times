@@ -4,7 +4,8 @@ The scripts presented here are relevent to the article: Carruthers et al. The im
 --- detailed instructions coming shortly ---
 
 ## Simple four taxon
-Use for generating simple four taxon simulated data, and analysing simulated data. 
+To generate simulated data, run four_taxon_simulation.R [https://github.com/pebgroup/tree_incongruence_divergence_times/blob/master/simple_four_taxon/simple_four_taxon_simulation.R]
+
 
 ## Simple sixteen taxon
 Use for generating simple sixteen taxon simulated data, and analysing simulated data. 
