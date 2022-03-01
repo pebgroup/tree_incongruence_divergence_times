@@ -4,7 +4,10 @@ The scripts presented here are relevent to the article: Carruthers et al. The im
 --- detailed instructions coming shortly ---
 
 ## Simple four taxon
-To generate simulated data [run four_taxon_simulation.R](https://github.com/pebgroup/tree_incongruence_divergence_times/blob/master/simple_four_taxon/simple_four_taxon_simulation.R)
+### To generate simulated data [run four_taxon_simulation.R](https://github.com/pebgroup/tree_incongruence_divergence_times/blob/master/simple_four_taxon/simple_four_taxon_simulation.R)\
+n_gene_trees: number of gene trees to simulate
+locus_size: length in base pairs of each simulated locus
+props: the probability that gene tree topologies are incongruent with the species tree topology in each simulated dataset
 
 
 ## Simple sixteen taxon
