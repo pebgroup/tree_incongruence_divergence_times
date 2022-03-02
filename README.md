@@ -18,7 +18,7 @@ This script will perform analyses of:
 
 ## Simple sixteen taxon
 ### To generate simulated data run [simple_sixteen_taxon_simulation.R](https://github.com/pebgroup/tree_incongruence_divergence_times/blob/master/simple_sixteen_taxon/simple_sixteen_taxon_simulation.R)
-Simulation needs to be repeated for imbalanced and imbalanced tree, and different levels of topological incongruence.\
+Simulation needs to be repeated for imbalanced and imbalanced tree, and different levels of topological incongruence.
 ##### _Arguments:_
 **congruence_level:** output_file (needs to refer to whether tree is balanced, and level of incongruence)\
 **tree:** species tree topology. Either [balanced_sixteen_taxon_cong.tre](https://github.com/pebgroup/tree_incongruence_divergence_times/blob/master/simple_sixteen_taxon/balanced_sixteen_cong.tre) or [unbalanced_sixteen_taxon_cong.tre](https://github.com/pebgroup/tree_incongruence_divergence_times/blob/master/simple_sixteen_taxon/unbalanced_sixteen_cong.tre)\
@@ -51,7 +51,7 @@ This script will estimate _t_ in the balanced species tree with [entire_script_b
 **locus_size:** size in base pairs of each gene tree\
 **n_reps:** number of times to repeat entire simulation\
 **effective_population_size_approx:** _Ne_\
-**n_tips:** number of taxa in species tree\
+**n_tips:** number of taxa in species tree
 ### To generate concatenated alignment of simulated data based only on loci with gene trees that are topologically congruent with the species tree use [get_congruent_subsets.R](https://github.com/pebgroup/tree_incongruence_divergence_times/blob/master/multi_species_coalescent_four_taxon/get_congruent_subsets.R)
 ### To generate start trees from initial four taxon simulation for analysis in multi species coalescent framework use [generate_start_trees_for_simple_analysed_as_coales.R](https://github.com/pebgroup/tree_incongruence_divergence_times/blob/master/multi_species_coalescent_four_taxon/generate_start_trees_for_simple_analysed_as_coales.R)
 ### To analyse simulated data use [overall.rev](https://github.com/pebgroup/tree_incongruence_divergence_times/blob/master/multi_species_coalescent_four_taxon/analyse/overall.rev) 
