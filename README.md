@@ -52,6 +52,9 @@ This script will estimate _t_ in the balanced species tree with [entire_script_b
 **n_reps:** number of times to repeat entire simulation\
 **effective_population_size_approx:** _Ne_\
 **n_tips:** number of taxa in species tree\
+### To generate concatenated alignment of simulated data based only on loci with gene trees that are topologically congruent with the species tree use [get_congruent_subsets.R](https://github.com/pebgroup/tree_incongruence_divergence_times/blob/master/multi_species_coalescent_four_taxon/get_congruent_subsets.R)
+### To generate start trees from initial four taxon simulation for analysis in multi species coalescent framework use [generate_start_trees_for_simple_analysed_as_coales.R](https://github.com/pebgroup/tree_incongruence_divergence_times/blob/master/multi_species_coalescent_four_taxon/generate_start_trees_for_simple_analysed_as_coales.R)
+### To analyse simulated data use [overall.rev](https://github.com/pebgroup/tree_incongruence_divergence_times/blob/master/multi_species_coalescent_four_taxon/analyse/overall.rev) 
 
 ## Empirical Example
 Scripts for empirical example presented in the study.
