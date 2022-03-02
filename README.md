@@ -40,9 +40,9 @@ Thie script will perform analyses of **the entire dataset (concatenated)** - usi
 **species_tree:** species tree, either [entire_tree_unbalanced.tre](https://github.com/pebgroup/tree_incongruence_divergence_times/blob/master/multi_species_coalescent_sixteen_taxon/entire_tree_unbalanced.tre), or [entire_tree_balanced.tre](https://github.com/pebgroup/tree_incongruence_divergence_times/blob/master/multi_species_coalescent_sixteen_taxon/entire_tree_balanced.tre)\
 **type:** name of output file
 #### To generate concatenated alignment of simulated data based only on loci with gene trees that are topologically congruent with the species tree use [get_congruent_subsets.R](https://github.com/pebgroup/tree_incongruence_divergence_times/blob/master/multi_species_coalescent_sixteen_taxon/get_congruent_subsets.R)
-
 #### To analyse simulated data run [rev_shell.Rev](https://github.com/pebgroup/tree_incongruence_divergence_times/blob/master/multi_species_coalescent_sixteen_taxon/analyse/rev_shell.Rev)
-
+This script will estimate _t_ in the balanced species tree with [entire_script_balanced.Rev](https://github.com/pebgroup/tree_incongruence_divergence_times/blob/master/multi_species_coalescent_sixteen_taxon/analyse/simple_clock_script_balanced.Rev); _t_ in the unbalanced species tree with [entire_script_unbalanced.Rev](https://github.com/pebgroup/tree_incongruence_divergence_times/blob/master/multi_species_coalescent_sixteen_taxon/analyse/simple_clock_script_unbalanced.Rev)
+#### also use [rev_shell_balanced_by_gene.Rev](https://github.com/pebgroup/tree_incongruence_divergence_times/blob/master/multi_species_coalescent_sixteen_taxon/analyse/rev_shell_balanced_by_gene.Rev) to estimate _t_ in individual gene trees. 
 
 
 ## Multi-species coalescent sixteen taxon
