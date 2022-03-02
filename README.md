@@ -1,5 +1,5 @@
 # The implications of incongruence between gene tree and species tree topologies for divergence time estimation
-The scripts presented here are relevent to the article: Carruthers et al. The implications of incongruence between gene tree and species tree topologies for divergence time estimation. Syst Biol.  
+The scripts presented here are relevent to the article: [Carruthers et al. The implications of incongruence between gene tree and species tree topologies for divergence time estimation. Syst Biol.](https://doi.org/10.1093/sysbio/syac012)  
 
 --- detailed instructions coming shortly ---
 
