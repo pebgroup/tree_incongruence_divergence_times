@@ -32,13 +32,16 @@ Thie script will perform analyses of **the entire dataset (concatenated)** - usi
 ## Multi-species coalescent sixteen taxon
 #### To generate simulated data use [multispecies_coalescent_sixteen_taxon_simulation.R](https://github.com/pebgroup/tree_incongruence_divergence_times/blob/master/multi_species_coalescent_sixteen_taxon/multispecies_coalescent_sixteen_taxon_simulation.R)
 ##### _Arguments:_
-**n_gene_trees:** number of gene trees to simulate\ 
-**locus_size:** size in base pairs of each gene tree\ 
+**n_gene_trees:** number of gene trees to simulate\
+**locus_size:** size in base pairs of each gene tree\
 **n_reps:** number of times to repeat entire simulation\
-**effective_population_size_approx:** _Ne_\ 
+**effective_population_size_approx:** _Ne_\
 **n_tips:** number of taxa in species tree\
 **species_tree:** species tree, either [entire_tree_unbalanced.tre](https://github.com/pebgroup/tree_incongruence_divergence_times/blob/master/multi_species_coalescent_sixteen_taxon/entire_tree_unbalanced.tre), or [entire_tree_balanced.tre](https://github.com/pebgroup/tree_incongruence_divergence_times/blob/master/multi_species_coalescent_sixteen_taxon/entire_tree_balanced.tre)\
 **type:** name of output file
+#### To generate concatenated alignment of simulated data based only on loci with gene trees that are topologically congruent with the species tree use [get_congruent_subsets.R](https://github.com/pebgroup/tree_incongruence_divergence_times/blob/master/multi_species_coalescent_sixteen_taxon/get_congruent_subsets.R)
+
+#### To analyse simulated data run [rev_shell.Rev](https://github.com/pebgroup/tree_incongruence_divergence_times/blob/master/multi_species_coalescent_sixteen_taxon/analyse/rev_shell.Rev)
 
 
 
