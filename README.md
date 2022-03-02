@@ -28,7 +28,16 @@ Simulation needs to be repeated for imbalanced and imbalanced tree, and differen
 Thie script will perform analyses of **the entire dataset (concatenated)** - using [simple_clock_script.Rev](https://github.com/pebgroup/tree_incongruence_divergence_times/blob/master/simple_sixteen_taxon/analyse/simple_clock_script.Rev) to estimate _t_; [simple_relaxed_script.Rev](https://github.com/pebgroup/tree_incongruence_divergence_times/blob/master/simple_sixteen_taxon/analyse/simple_relaxed_script.Rev) and [simple_less_relaxed_script.Rev](https://github.com/pebgroup/tree_incongruence_divergence_times/blob/master/simple_sixteen_taxon/analyse/simple_less_relaxed_script.Rev) to estimate _r_; and [simple_branch_length_estimation.Rev](https://github.com/pebgroup/tree_incongruence_divergence_times/blob/master/simple_sixteen_taxon/analyse/simple_branch_length_estimation.Rev) to estimate _n_.
 
 ## Multi-species coalescent sixteen taxon
-Use for generating data in a multispecies coalescent framework with 16 taxon species tree, and analysing simulated data.
+#### To generate simulated data use [multispecies_coalescent_sixteen_taxon_simulation.R](https://github.com/pebgroup/tree_incongruence_divergence_times/blob/master/multi_species_coalescent_sixteen_taxon/multispecies_coalescent_sixteen_taxon_simulation.R)
+**n_gene_trees:** number of gene trees to simulate 
+**locus_size:** size in base pairs of each gene tree 
+**n_reps:** number of times to repeat entire simulation
+**effective_population_size_approx:** _Ne_ 
+**n_tips:** number of taxa in species tree
+**species_tree:** species tree, either [entire_tree_unbalanced.tre](https://github.com/pebgroup/tree_incongruence_divergence_times/blob/master/multi_species_coalescent_sixteen_taxon/entire_tree_unbalanced.tre), or [entire_tree_balanced.tre](https://github.com/pebgroup/tree_incongruence_divergence_times/blob/master/multi_species_coalescent_sixteen_taxon/entire_tree_balanced.tre)
+**type:** name of output file
+
+
 
 ## Multi-species coalescent sixteen taxon
 Use for generating data in a multispecies coalescent framework with 4 taxon species tree, and analysing simulated data.
