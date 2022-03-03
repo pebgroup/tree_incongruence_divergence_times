@@ -57,7 +57,16 @@ This script will estimate _t_ in the balanced species tree with [entire_script_b
 ## Empirical Example
 Scripts for empirical example presented in the study.
 
+#### phylogenetic_inference contains:
+- data (gene trees, alignments, and species tree)\
+- scripts (for running astral, raxml_ng, and rooting
 
+#### divergence_times contains:
+- branch_length_tree.tre: species tree with molecular branch lengths derived from branch wise method\
+- for_analysis_cong.tre: species tree with molecular branch lengths estimated from concatenated alignment of congruent loci\
+- for_analysis_all.tre: species tree with molecular branch lengths estimates from concatenated alignment of all loci\
+- .CPPR8S files: input files for treePL. There are two for each type of input tree (listed above). One with minimal assumptions, and one with full assumptions\
+- output folders: contains output tree for each of the 6 different analyses in treePL
 
 
 
